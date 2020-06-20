@@ -5,6 +5,7 @@ from handright import Template, handwrite
 from multiprocessing import Pool
 import time
 from Fun.fun2 import *
+from tkinter import messagebox as mBox
 
 def trans(input_path,output_path,font_path,line_spacing,font_size,
           fill,left_margin,top_margin,right_margin,bottom_margin,word_spacing,
@@ -52,4 +53,5 @@ def trans(input_path,output_path,font_path,line_spacing,font_size,
             im.save(r"../test.jpg")
     time_end = time.time()
     print(time_end-time_start)
+    mBox.showinfo('提示', '运行完毕')
 
