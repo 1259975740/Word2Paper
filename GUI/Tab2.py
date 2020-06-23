@@ -8,7 +8,7 @@ from PIL import ImageTk,Image
 class Tab2():
     def __init__(self,tab):
         self._createWidget(tab)
-    
+
         
     def _createWidget(self,tab):
         self.zhuo = tk.Frame(tab,bg='red')
@@ -34,7 +34,3 @@ class Tab2():
         w_box = 800   #大伙可以调节这个，来设置图片的大小。当然，也建议读者们把他设为 公有的。
         h_box = 1200
         self._resize(w,h,w_box,h_box,pil_image)
-
-
-
-        

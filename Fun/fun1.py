@@ -11,7 +11,7 @@ def trans(input_path,output_path,font_path,line_spacing,font_size,
           fill,left_margin,top_margin,right_margin,bottom_margin,word_spacing,
           disturb_x_sigma,disturb_y_sigma,disturb_theta_sigma,
           line_spacing_sigma,font_size_sigma,word_spacing_sigma,background,if_test=False):
-    
+    mBox.showinfo('提示', '运行中，请耐心等待\n 文件越复杂，运行时间越久哦')
     background=Image.open(background)
     width, height = background.size
     background = background.resize((np.int(3*width),np.int(2.5*height)),resample=Image.LANCZOS)
@@ -30,7 +30,7 @@ def trans(input_path,output_path,font_path,line_spacing,font_size,
         font_size=font_size,
         font=ImageFont.truetype(font_path),
         line_spacing=line_spacing,
-        fill=fill,  # ���塰��ɫ��
+        fill=0,  # ���塰��ɫ��
         left_margin=left_margin,
         top_margin=-top_margin,
         right_margin=right_margin,
@@ -52,6 +52,6 @@ def trans(input_path,output_path,font_path,line_spacing,font_size,
         else:
             im.save(r"../test.jpg")
     time_end = time.time()
-    print(time_end-time_start)
+    print('本次运行共耗费： '+str(time_end-time_start)+' 秒')
     mBox.showinfo('提示', '运行完毕')
 

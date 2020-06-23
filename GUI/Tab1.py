@@ -68,7 +68,7 @@ class OOP():
         disturb_x_sigma = float(str(self.xSigEry.get()))
         disturb_y_sigma = float(str(self.ySigEry.get()))
         disturb_theta_sigma = float(str(self.thetaSigEry.get()))
-        fill = float(str(self.fntColCom.get()))
+        fill = int(float(str(self.fntColCom.get())))
         background = str(self.bGEntry.get())
         run = Thread(target=self._runTrans,args=(input_path,output_path,font_path,line_spacing,font_size,
                                                  fill,left_margin,top_margin,right_margin,bottom_margin,word_spacing,
@@ -227,7 +227,7 @@ class OOP():
         ttk.Label(self.miniCon,text='字体颜色').grid(column=2,row=0)
 #        self._fntCol = tk.StringVar()
  #       self._fntCol.set(0)
-        self.fntColCom = ttk.Combobox(self.miniCon)
+        self.fntColCom = ttk.Combobox(self.miniCon,state='readonly')
   #      self.fntColCom.grid(column=3,row=0,sticky='W')
         self.fntColCom['value']=(0,255,666)
         self.fntColCom.grid(column=3,row=0,sticky='W')
@@ -325,6 +325,7 @@ class OOP():
         
 
         """页面2开发"""
-        self.tab2Widget = Tab2(self.tab2)  
+        self.tab2Widget = Tab2(self.tab2)
+ 
 oop = OOP()
 oop.win.mainloop()
